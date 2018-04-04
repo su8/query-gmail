@@ -60,7 +60,7 @@ read_gmail_data_cb(char *data, size_t size, size_t nmemb, char *str1) {
     }
   }
 
-  if ('\0' != *str1) {
+  if (!('0' == *str1) && '\0' != *str1) {
     *str1++ = '\0';
   }
   return sz;
@@ -68,7 +68,7 @@ read_gmail_data_cb(char *data, size_t size, size_t nmemb, char *str1) {
 
 
 int main(int argc, char *argv[]) {
-  char str[200] = "0";
+  char str[50] = "0";
   const char *const da_url = "https://mail.google.com/mail/feed/atom";
 
   CURL *curl = NULL;
