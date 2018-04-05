@@ -67,20 +67,12 @@ read_gmail_data_cb(char *data, size_t size, size_t nmemb, char *str1) {
 }
 
 
-int main(int argc, char *argv[]) {
+int main(void) {
   char str[50] = "0";
   const char *const da_url = "https://mail.google.com/mail/feed/atom";
 
   CURL *curl = NULL;
   CURLcode res;
-
-  if (3 > argc) {
-    printf("%s\n", "Missing account or password");
-    return EXIT_FAILURE;
-  }
-
-  const char *const GMAIL_ACC  = argv[1];
-  const char *const GMAIL_PASS = argv[2];
 
   curl_global_init(CURL_GLOBAL_ALL);
 

@@ -5,7 +5,7 @@ PACKAGE=mail
 PROG=mail.c
 
 all:
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(PACKAGE) $(PROG)
+	$(CC) -DGMAIL_ACC=\"'$(ACC)'\" -DGMAIL_PASS=\"'$(PASS)'\" $(CFLAGS) $(LDFLAGS) -o $(PACKAGE) $(PROG)
 
 install: 
 	install -D -s -m 755 $(PACKAGE) /usr/bin/$(PACKAGE)
