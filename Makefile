@@ -12,5 +12,6 @@ install:
 
 clean:
 	rm -f /usr/bin/$(PACKAGE)
+	rm -f $(PACKAGE)
 
 .PHONY: all install clean
